@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.inditex</groupId>
+    <artifactId>SGA-Inditex</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>inditex-tech-boot</artifactId>
+  <name>inditex-tech-boot</name>
+  <url>http://maven.apache.org</url>
+
+
+  <build>
+  <finalName>inditex-tech-boot</finalName>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <configuration>
+        <excludeDevtools>true</excludeDevtools>
+      </configuration>
+      <executions>
+        <execution>
+          <id>repackage</id>
+          <goals>
+            <goal>repackage</goal>
+          </goals>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </execution>
+        <execution>
+          <id>default</id>
+          <goals>
+            <goal>repackage</goal>
+          </goals>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <executions>
+        <execution>
+          <id>copy-dependencies</id>
+          <phase>prepare-package</phase>
+          <goals>
+            <goal>copy-dependencies</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${project.build.directory}/${appName}</outputDirectory>
+            <overWriteReleases>false</overWriteReleases>
+            <overWriteSnapshots>false</overWriteSnapshots>
+            <overWriteIfNewer>true</overWriteIfNewer>
+            <includeScope>runtime</includeScope>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+  </build>
+
+
+
+</project>
