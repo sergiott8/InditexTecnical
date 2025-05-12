@@ -3,45 +3,33 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.inditex</groupId>
-    <artifactId>SGA-Inditex</artifactId>
+    <artifactId>Inditex-tech</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>inditex-tech-boot</artifactId>
   <name>inditex-tech-boot</name>
   <url>http://maven.apache.org</url>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.inditex</groupId>
+      <artifactId>inditex-tech-infrastructure</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.inditex</groupId>
+      <artifactId>inditex-tech-application</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
-  <finalName>inditex-tech-boot</finalName>
+    <finalName>${project.parent.artifactId}-${project.parent.version}</finalName>
   <plugins>
     <plugin>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-maven-plugin</artifactId>
-      <configuration>
-        <excludeDevtools>true</excludeDevtools>
-      </configuration>
-      <executions>
-        <execution>
-          <id>repackage</id>
-          <goals>
-            <goal>repackage</goal>
-          </goals>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </execution>
-        <execution>
-          <id>default</id>
-          <goals>
-            <goal>repackage</goal>
-          </goals>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </execution>
-      </executions>
     </plugin>
-
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-dependency-plugin</artifactId>
@@ -53,7 +41,6 @@
             <goal>copy-dependencies</goal>
           </goals>
           <configuration>
-            <outputDirectory>${project.build.directory}/${appName}</outputDirectory>
             <overWriteReleases>false</overWriteReleases>
             <overWriteSnapshots>false</overWriteSnapshots>
             <overWriteIfNewer>true</overWriteIfNewer>

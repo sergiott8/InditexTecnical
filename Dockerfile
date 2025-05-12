@@ -1,11 +1,10 @@
-FROM adoptopenjdk/openjdk11
-ENV JAVA_VERSION=1.11
+FROM eclipse-temurin:17-jdk-jammy AS builder
 
-VOLUME /tmp
+WORKDIR /app
+COPY inditex-tech-boot/target/Inditex-tech-1.0-SNAPSHOT.jar app.jar
 
-COPY target/SGA-Inditex-1.0-SNAPSHOT.jar app.jar
+FROM eclipse-temurin:17-jre-jammy
+COPY --from=builder /app/app.jar /app.jar
 
-
-RUN sh -c 'touch /app.jar'
 EXPOSE 8090
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
