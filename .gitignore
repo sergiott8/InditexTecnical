@@ -1,0 +1,6 @@
+# Project exclude paths
+/api-first/inditex-tech-api-rest/target/
+/inditex-tech-application/target/
+/inditex-tech-boot/target/
+/inditex-tech-domain/target/
+/inditex-tech-infrastructure/target/
