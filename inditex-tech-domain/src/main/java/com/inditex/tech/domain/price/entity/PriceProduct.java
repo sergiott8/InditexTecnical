@@ -25,4 +25,7 @@ public class PriceProduct {
 
   private Integer priceList;
 
+  private Integer priority;
+
+
 }

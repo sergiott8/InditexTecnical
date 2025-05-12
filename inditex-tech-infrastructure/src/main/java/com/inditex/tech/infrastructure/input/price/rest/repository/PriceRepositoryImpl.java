@@ -1,12 +1,12 @@
-package com.inditex.tech.infrstructure.input.price.rest.repository;
+package com.inditex.tech.infrastructure.input.price.rest.repository;
 
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
 import com.inditex.tech.domain.price.entity.PriceProduct;
 import com.inditex.tech.domain.price.repository.PriceRepository;
-import com.inditex.tech.infrstructure.input.price.rest.entity.PriceEntity;
-import com.inditex.tech.infrstructure.input.price.rest.mapper.PriceMapper;
+import com.inditex.tech.infrastructure.input.price.rest.entity.PriceEntity;
+import com.inditex.tech.infrastructure.input.price.rest.mapper.PriceMapper;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

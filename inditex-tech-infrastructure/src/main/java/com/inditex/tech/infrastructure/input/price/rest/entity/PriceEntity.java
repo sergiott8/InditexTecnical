@@ -1,4 +1,4 @@
-package com.inditex.tech.infrstructure.input.price.rest.entity;
+package com.inditex.tech.infrastructure.input.price.rest.entity;
 
 import java.time.OffsetDateTime;
 

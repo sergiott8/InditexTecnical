@@ -1,8 +1,8 @@
-package com.inditex.tech.infrstructure.input.price.rest.repository;
+package com.inditex.tech.infrastructure.input.price.rest.repository;
 
 import java.time.OffsetDateTime;
 
-import com.inditex.tech.infrstructure.input.price.rest.entity.PriceEntity;
+import com.inditex.tech.infrastructure.input.price.rest.entity.PriceEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

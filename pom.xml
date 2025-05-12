@@ -5,14 +5,13 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.inditex</groupId>
-  <artifactId>SGA-Inditex</artifactId>
+  <artifactId>Inditex-tech</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Price Inditex Service Exercise</name>
   <modules>
     <module>api-first/inditex-tech-api-rest</module>
-
     <module>inditex-tech-application</module>
     <module>inditex-tech-boot</module>
     <module>inditex-tech-domain</module>
@@ -27,6 +26,7 @@
     <openapi-generator.version>7.12.0</openapi-generator.version>
     <openapi.package.api>com.inditex.apifirst.controller</openapi.package.api>
     <openapi.package.model>com.inditex.apifirst.dto</openapi.package.model>
+    <project.build.directory>target</project.build.directory>
   </properties>
 
   <parent>
@@ -61,6 +61,12 @@
       <artifactId>h2</artifactId>
       <scope>runtime</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
 
     <dependency>
       <groupId>jakarta.validation</groupId>
@@ -99,6 +105,13 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>${mapstruct.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -108,6 +121,27 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.22</version>
+            </path>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>${mapstruct.version}</version>
+            </path>
+          </annotationProcessorPaths>
+          <compilerArgs>
+            <arg>-Amapstruct.defaultComponentModel=spring</arg>
+          </compilerArgs>
+        </configuration>
       </plugin>
     </plugins>
 

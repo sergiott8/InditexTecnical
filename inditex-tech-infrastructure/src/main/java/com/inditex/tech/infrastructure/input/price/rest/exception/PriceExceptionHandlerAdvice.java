@@ -1,7 +1,7 @@
-package com.inditex.tech.infrstructure.input.price.rest.exception;
+package com.inditex.tech.infrastructure.input.price.rest.exception;
 
 import com.inditex.tech.domain.price.exception.PriceProductBusinessException;
-import com.inditex.tech.infrstructure.input.price.rest.mapper.PriceExceptionMapper;
+import com.inditex.tech.infrastructure.input.price.rest.mapper.PriceExceptionMapper;
 
 import lombok.RequiredArgsConstructor;
 import org.openapitools.model.ErrorResponseDTO;

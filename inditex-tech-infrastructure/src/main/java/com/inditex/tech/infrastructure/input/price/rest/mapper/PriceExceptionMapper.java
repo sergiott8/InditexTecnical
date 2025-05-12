@@ -1,4 +1,4 @@
-package com.inditex.tech.infrstructure.input.price.rest.mapper;
+package com.inditex.tech.infrastructure.input.price.rest.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
