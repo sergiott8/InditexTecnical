@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PriceController implements PriceApi {
 
   private final PriceSearchUseCase priceSearchUseCase;
-  
+
   private final PriceMapper priceMapper;
 
 

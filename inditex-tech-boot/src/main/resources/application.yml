@@ -22,3 +22,13 @@ spring:
       hibernate:
         jdbc:
           time_zone: UTC
+
+server:
+  servlet:
+    context-path: /v1
+
+logging:
+  level:
+    root: INFO
+    com.inditex: DEBUG
+    org.springframework: INFO

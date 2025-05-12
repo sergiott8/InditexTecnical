@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Immutable;
 
-@Entity(name = "prices")
+@Entity(name = "price")
 @Builder
 @Getter
 @Setter

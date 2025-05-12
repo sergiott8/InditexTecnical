@@ -10,6 +10,18 @@
   <name>inditex-tech-boot</name>
   <url>http://maven.apache.org</url>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.inditex</groupId>
+      <artifactId>inditex-tech-infrastructure</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.inditex</groupId>
+      <artifactId>inditex-tech-application</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>${project.parent.artifactId}-${project.parent.version}</finalName>

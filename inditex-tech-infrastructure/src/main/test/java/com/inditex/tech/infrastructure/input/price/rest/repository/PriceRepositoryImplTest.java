@@ -64,7 +64,7 @@ class PriceRepositoryImplTest {
         .build();
 
     // When
-    when(this.jpaPriceRepository.findTopByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+    when(this.jpaPriceRepository.findApplicablePrice(
         productId, brandId, date)).thenReturn(priceEntity);
     when(this.priceMapper.mapPriceEntityToPriceProduct(priceEntity)).thenReturn(expectedPriceProduct);
 

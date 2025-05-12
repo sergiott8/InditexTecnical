@@ -139,12 +139,6 @@ components:
       description: Common error response
       type: object
       properties:
-        code:
-          description: 'The error status code'
-          type: integer
-          format: int32
-          minimum: 1
-          example: 404
         title:
           description: 'A summarized sentence about the error'
           type: string

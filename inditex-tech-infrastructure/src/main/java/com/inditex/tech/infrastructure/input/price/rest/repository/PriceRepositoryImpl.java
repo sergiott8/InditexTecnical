@@ -1,6 +1,7 @@
 package com.inditex.tech.infrastructure.input.price.rest.repository;
 
 import java.time.OffsetDateTime;
+import java.util.Objects;
 import java.util.Optional;
 
 import com.inditex.tech.domain.price.entity.PriceProduct;
@@ -24,10 +25,11 @@ public class PriceRepositoryImpl implements PriceRepository {
   @Override
   public Optional<PriceProduct> findApplicablePrice(Integer productId, Integer brandId, OffsetDateTime date) {
 
-    final PriceEntity priceEntity =
-        this.priceRepository.findTopByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId,
-                                                                                                                                brandId,
-                                                                                                                                date);
+    final PriceEntity priceEntity = this.priceRepository.findApplicablePrice(productId, brandId, date);
+
+    if (Objects.isNull(priceEntity)) {
+        return Optional.empty();
+    }
 
     final PriceProduct priceProduct = this.priceMapper.mapPriceEntityToPriceProduct(priceEntity);
     return Optional.of(priceProduct);

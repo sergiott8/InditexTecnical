@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice("com.inditex.tech.infrastructure.input.rest.price")
+@ControllerAdvice("com.inditex.tech.infrastructure.input.price.rest")
 @RequiredArgsConstructor
 public class PriceExceptionHandlerAdvice {
 

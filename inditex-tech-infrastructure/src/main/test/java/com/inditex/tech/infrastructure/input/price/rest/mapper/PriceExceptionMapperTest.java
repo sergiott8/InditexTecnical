@@ -23,7 +23,6 @@ class PriceExceptionMapperTest {
     final ErrorResponseDTO errorResponseDTO = this.priceExceptionMapper.mapExceptionToErrorResponseDTO(exception);
 
     // Then
-    assertNull(errorResponseDTO.getCode());
     assertEquals(errorMessage, errorResponseDTO.getTitle());
     assertEquals(errorMessage, errorResponseDTO.getDescription());
   }
@@ -37,7 +36,6 @@ class PriceExceptionMapperTest {
     final ErrorResponseDTO errorResponseDTO = this.priceExceptionMapper.mapExceptionToErrorResponseDTO(exception);
 
     // Then
-    assertNull(errorResponseDTO.getCode());
     assertNull(errorResponseDTO.getTitle());
     assertNull(errorResponseDTO.getDescription());
   }
@@ -61,7 +59,6 @@ class PriceExceptionMapperTest {
     final ErrorResponseDTO errorResponseDTO = this.priceExceptionMapper.mapExceptionToErrorResponseDTO(exception);
 
     // Then
-    assertNull(errorResponseDTO.getCode());
     assertEquals(errorMessage, errorResponseDTO.getTitle());
     assertEquals(errorMessage, errorResponseDTO.getDescription());
   }
@@ -76,7 +73,6 @@ class PriceExceptionMapperTest {
     final ErrorResponseDTO errorResponseDTO = this.priceExceptionMapper.mapExceptionToErrorResponseDTO(exception);
 
     // Then
-    assertNull(errorResponseDTO.getCode());
     assertEquals(errorMessage, errorResponseDTO.getTitle());
     assertEquals(errorMessage, errorResponseDTO.getDescription());
   }

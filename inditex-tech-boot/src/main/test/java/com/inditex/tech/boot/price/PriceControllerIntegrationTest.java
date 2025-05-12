@@ -15,7 +15,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-@SpringBootTest(classes = com.inditex.tech.boot.Application.class)
+@SpringBootTest(classes = com.inditex.tech.boot.price.TestConfig.class)
 @AutoConfigureMockMvc
 @DirtiesContext
 @ActiveProfiles("test")
@@ -31,7 +31,7 @@ class PriceControllerIntegrationTest {
 
         OffsetDateTime requestDate = OffsetDateTime.of(2020, 6, 14, 10, 0, 0, 0, ZoneOffset.UTC);
 
-        mockMvc.perform(get("/prices")
+        mockMvc.perform(get("/price")
                 .param("entryDate", requestDate.toString())
                 .param("productId", "35455")
                 .param("brandId", "1"))
@@ -51,7 +51,7 @@ class PriceControllerIntegrationTest {
 
         OffsetDateTime requestDate = OffsetDateTime.of(2020, 6, 14, 16, 0, 0, 0, ZoneOffset.UTC);
 
-        mockMvc.perform(get("/prices")
+        mockMvc.perform(get("/price")
                 .param("entryDate", requestDate.toString())
                 .param("productId", "35455")
                 .param("brandId", "1"))
@@ -71,7 +71,7 @@ class PriceControllerIntegrationTest {
 
         OffsetDateTime requestDate = OffsetDateTime.of(2020, 6, 14, 21, 0, 0, 0, ZoneOffset.UTC);
 
-        mockMvc.perform(get("/prices")
+        mockMvc.perform(get("/price")
                 .param("entryDate", requestDate.toString())
                 .param("productId", "35455")
                 .param("brandId", "1"))
@@ -91,7 +91,7 @@ class PriceControllerIntegrationTest {
 
         OffsetDateTime requestDate = OffsetDateTime.of(2020, 6, 15, 10, 0, 0, 0, ZoneOffset.UTC);
 
-        mockMvc.perform(get("/prices")
+        mockMvc.perform(get("/price")
                 .param("entryDate", requestDate.toString())
                 .param("productId", "35455")
                 .param("brandId", "1"))
@@ -111,7 +111,7 @@ class PriceControllerIntegrationTest {
 
         OffsetDateTime requestDate = OffsetDateTime.of(2020, 6, 16, 21, 0, 0, 0, ZoneOffset.UTC);
 
-        mockMvc.perform(get("/prices")
+        mockMvc.perform(get("/price")
                 .param("entryDate", requestDate.toString())
                 .param("productId", "35455")
                 .param("brandId", "1"))

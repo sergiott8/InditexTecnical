@@ -2,6 +2,7 @@ package com.inditex.tech.infrastructure.input.price.rest.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -13,6 +14,7 @@ import java.time.OffsetDateTime;
 import com.inditex.tech.infrastructure.input.price.rest.util.DateUtils;
 
 import com.inditex.tech.domain.price.entity.PriceProduct;
+import com.inditex.tech.domain.price.exception.PriceProductBusinessException;
 import com.inditex.tech.domain.price.usecase.PriceSearchUseCase;
 import com.inditex.tech.infrastructure.input.price.rest.mapper.PriceMapper;
 
@@ -118,6 +120,28 @@ class PriceControllerTest {
     assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     assertNull(response.getBody());
     verify(this.priceSearchUseCase, never()).searchPrice(any(), any(), any());
+    verify(this.priceMapper, never()).mapPriceProductToPriceDTO(any());
+  }
+
+  @Test
+  void should_throw_exception_when_price_not_found() {
+    // Given
+    final OffsetDateTime entryDate = OffsetDateTime.now();
+    final Integer productId = 35456;
+    final Integer brandId = 1;
+
+    // When
+    when(this.priceSearchUseCase.searchPrice(entryDate, productId, brandId))
+        .thenThrow(new PriceProductBusinessException("Price not found for productId: " + productId + " and brandId " + brandId));
+
+    // Then
+    PriceProductBusinessException exception = assertThrows(
+        PriceProductBusinessException.class,
+        () -> this.priceController.searchPriceProduct(entryDate, productId, brandId)
+    );
+
+    assertEquals("Price not found for productId: " + productId + " and brandId " + brandId, exception.getMessage());
+    verify(this.priceSearchUseCase, times(1)).searchPrice(entryDate, productId, brandId);
     verify(this.priceMapper, never()).mapPriceProductToPriceDTO(any());
   }
 
