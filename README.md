@@ -17,12 +17,11 @@ The project is organized into several modules following the hexagonal architectu
 ## Technologies Used
 
 - Java 17
-- Spring Boot 3.x
+- Spring Boot 3.4.5
 - Spring Data JPA
 - H2 Database
 - Maven
 - Docker
-- OpenAPI for API documentation and code generation
 - JUnit 5 for testing
 
 ## Prerequisites
@@ -68,13 +67,6 @@ Run the Docker container:
 docker run -p 8080:8080 inditex-tech:1.0
 ```
 
-## API Documentation
-
-The API is documented using OpenAPI. Once the application is running, you can access the API documentation at:
-
-```
-http://localhost:8080/v1/swagger-ui.html
-```
 
 ## API Endpoints
 
@@ -107,6 +99,12 @@ GET /v1/price?entryDate=2020-06-14T10:00:00Z&productId=35455&brandId=1
   "priority": 0
 }
 ```
+
+## API Documentation
+
+The API is defined using OpenAPI specification. The OpenAPI YAML file can be found in the `api-first/inditex-tech-api-rest/src/main/resources/openapi.yaml` file. This specification is used to generate the API interfaces and models through the OpenAPI Generator Maven plugin.
+
+The OpenAPI specification serves as the source of truth for the API contract and can be viewed directly in any text editor or OpenAPI viewer tool.
 
 ## Database Configuration
 
@@ -165,16 +163,3 @@ This architecture provides several benefits:
 - Clear separation of concerns
 - Improved testability
 - Flexibility to change external dependencies without affecting the core business logic
-
-## Contributing
-
-Please follow these guidelines when contributing to the project:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.

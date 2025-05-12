@@ -23,6 +23,7 @@ spring:
         jdbc:
           time_zone: UTC
 
+
 server:
   servlet:
     context-path: /v1
