@@ -26,7 +26,7 @@ The project is organized into several modules following the hexagonal architectu
 
 ## Prerequisites
 
-- Java 17 or higher
+- Java 17
 - Maven 3.6 or higher
 - Docker (optional, for containerized deployment)
 
