@@ -6,13 +6,20 @@ This project is a Spring Boot application that provides a REST API for retrievin
 
 ## Project Structure
 
-The project is organized into several modules following the hexagonal architecture:
+The project is organized into several modules following the hexagonal architecture pattern, which separates the application into three main layers:
 
-- **inditex-tech-domain**: Contains the core business logic, entities, and interfaces.
-- **inditex-tech-application**: Implements the use cases that orchestrate the domain logic.
-- **inditex-tech-infrastructure**: Contains the adapters for external dependencies (REST controllers, repositories, etc.).
+- **inditex-tech-domain**: Contains the core business logic, entities, and interfaces. This is the domain layer.
+- **inditex-tech-application**: Implements the use cases that orchestrate the domain logic. This is the application layer.
+- **inditex-tech-infrastructure**: Contains the adapters for external dependencies (REST controllers, repositories, etc.). This is the infrastructure layer.
 - **inditex-tech-boot**: Configures and bootstraps the application.
 - **api-first**: Contains the OpenAPI specification and generated code.
+
+This architecture provides several benefits:
+- Clear separation of concerns
+- Improved testability
+- Flexibility to change external dependencies without affecting the core business logic
+
+
 
 ## Technologies Used
 
@@ -33,6 +40,10 @@ The project is organized into several modules following the hexagonal architectu
 ## Building the Application
 
 To build the application, run the following command from the project root:
+
+> ⚠️ **Important**: Ensure that the application is compiled and run using **JDK 17**.  
+> Using a different Java version may cause compilation or runtime errors, especially with tooling such as annotation processors (e.g., Lombok) or internal API dependencies.
+
 
 ```bash
 mvn clean install
@@ -106,6 +117,8 @@ The API is defined using OpenAPI specification. The OpenAPI YAML file can be fou
 
 The OpenAPI specification serves as the source of truth for the API contract and can be viewed directly in any text editor or OpenAPI viewer tool.
 
+Additionally, a Swagger UI version of the API documentation is available for easier visual inspection. You can find it in the `Swagger/` directory at the root of the project repository.
+
 ## Database Configuration
 
 The application uses an H2 in-memory database. The database is initialized with sample data from `data.sql` and the schema is defined in `schema.sql`.
@@ -150,15 +163,11 @@ The application includes comprehensive error handling for various scenarios:
 
 The application uses UTC (Zulu time) for all date and time operations. This ensures consistent behavior regardless of the server's time zone.
 
-## Project Architecture
+## Postman Collection
 
-The project follows the hexagonal architecture pattern, which separates the application into three main layers:
+A Postman collection is available in the `Postman` directory to easily test and explore the different use cases of the API.
 
-1. **Domain Layer**: Contains the core business logic and entities.
-2. **Application Layer**: Implements the use cases that orchestrate the domain logic.
-3. **Infrastructure Layer**: Contains the adapters for external dependencies.
+- **File**: `SGA-Inditex-Postman.postman_collection`
 
-This architecture provides several benefits:
-- Clear separation of concerns
-- Improved testability
-- Flexibility to change external dependencies without affecting the core business logic
+You can import this collection into Postman and use it to send requests to the application endpoints once the service is running.
+
