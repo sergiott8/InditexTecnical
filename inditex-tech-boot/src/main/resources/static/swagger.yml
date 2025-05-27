@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  title: SGA - Inditex
+  description: API specification for Inditex technical test.
+  version: 1.0.0
+  contact:
+    email: storres@paradigmadigital.com
+
+host: localhost
+basePath: /
+schemes:
+  - http
+
+tags:
+  - name: product
+    description: Product search
+    externalDocs:
+      description: Learn more about our products
+      url: https://www.inditex.com/en/home
+
+paths:
+  /price:
+    get:
+      tags:
+        - Price
+      summary: Find price between entry and exit dates with corresponding product
+      description: Price found between entry and exit dates with corresponding product
+      operationId: searchPriceProduct
+      produces:
+        - application/json
+      parameters:
+        - name: entryDate
+          in: query
+          description: Product application date
+          required: true
+          type: string
+          format: date-time
+        - name: productId
+          in: query
+          description: Product identifier
+          required: true
+          type: integer
+          example: 35515
+        - name: brandId
+          in: query
+          description: Brand identifier
+          required: true
+          type: integer
+          example: 1
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Price"
+        400:
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: Unauthorized
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: Not Allowed
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: Not Found
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Unavailable
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        504:
+          description: Gateway Timeout
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+
+definitions:
+  Price:
+    type: object
+    properties:
+      productId:
+        type: integer
+      startDate:
+        type: string
+        format: date-time
+      endDate:
+        type: string
+        format: date-time
+      priceList:
+        type: integer
+      price:
+        type: number
+        format: double
+      currency:
+        type: string
+        default: EUR
+      brandId:
+        type: integer
+      priority:
+        type: integer
+        description: Price application disambiguator
+
+  ErrorResponse:
+    type: object
+    required:
+      - title
+      - description
+    properties:
+      title:
+        type: string
+        maxLength: 256
+        example: Error
+      description:
+        type: string
+        maxLength: 1024
+        example: Error
+
+externalDocs:
+  description: Learn more about Inditex
+  url: https://www.inditex.com/en/home
