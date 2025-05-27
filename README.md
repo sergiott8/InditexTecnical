@@ -26,7 +26,7 @@ The project is organized into several modules following the hexagonal architectu
 
 ## Prerequisites
 
-- Java 17 or higher
+- Java 17
 - Maven 3.6 or higher
 - Docker (optional, for containerized deployment)
 
@@ -119,7 +119,6 @@ http://localhost:8080/v1/h2-console
 Connection details:
 - JDBC URL: `jdbc:h2:mem:mydb`
 - Username: `sa`
-- Password: `password`
 
 ## Testing
 
