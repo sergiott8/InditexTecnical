@@ -130,6 +130,8 @@ http://localhost:8080/v1/h2-console
 Connection details:
 - JDBC URL: `jdbc:h2:mem:mydb`
 - Username: `sa`
+- Password: `password`
+
 
 ## Testing
 
