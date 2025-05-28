@@ -117,8 +117,6 @@ The API is defined using OpenAPI specification. The OpenAPI YAML file can be fou
 
 The OpenAPI specification serves as the source of truth for the API contract and can be viewed directly in any text editor or OpenAPI viewer tool.
 
-Additionally, a Swagger UI version of the API documentation is available for easier visual inspection. You can find it in the `Swagger/` directory at the root of the project repository.
-
 ## Database Configuration
 
 The application uses an H2 in-memory database. The database is initialized with sample data from `data.sql` and the schema is defined in `schema.sql`.
