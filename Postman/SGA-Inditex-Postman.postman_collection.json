@@ -17,7 +17,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -25,19 +26,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/product?entryDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+					"raw": "http://localhost:8080/v1/price?entryDate=2020-06-15T12:00:00Z&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8090",
+					"port": "8080",
 					"path": [
-						"product"
+						"v1",
+						"price"
 					],
 					"query": [
 						{
 							"key": "entryDate",
-							"value": "2020-06-14T10:00:00"
+							"value": "2020-06-15T12:00:00Z"
 						},
 						{
 							"key": "productId",
@@ -63,7 +65,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -71,19 +74,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/product?entryDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+					"raw": "http://localhost:8080/v1/price?entryDate=2020-06-14T16:00:00Z&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8090",
+					"port": "8080",
 					"path": [
-						"product"
+						"v1",
+						"price"
 					],
 					"query": [
 						{
 							"key": "entryDate",
-							"value": "2020-06-14T16:00:00"
+							"value": "2020-06-14T16:00:00Z"
 						},
 						{
 							"key": "productId",
@@ -155,7 +159,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -163,19 +168,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/product?entryDate=2020-06-15T11:00:00&productId=35455&brandId=1",
+					"raw": "http://localhost:8080/v1/price?entryDate=2020-06-15T11:00:00Z&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8090",
+					"port": "8080",
 					"path": [
-						"product"
+						"v1",
+						"price"
 					],
 					"query": [
 						{
 							"key": "entryDate",
-							"value": "2020-06-15T11:00:00"
+							"value": "2020-06-15T11:00:00Z"
 						},
 						{
 							"key": "productId",
@@ -201,7 +207,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -209,19 +216,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/product?entryDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+					"raw": "http://localhost:8080/v1/price?entryDate=2020-06-16T21:00:00Z&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8090",
+					"port": "8080",
 					"path": [
-						"product"
+						"v1",
+						"price"
 					],
 					"query": [
 						{
 							"key": "entryDate",
-							"value": "2020-06-16T21:00:00"
+							"value": "2020-06-16T21:00:00Z"
 						},
 						{
 							"key": "productId",
